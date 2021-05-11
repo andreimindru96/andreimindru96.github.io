@@ -64,5 +64,10 @@ Cookies:<br>
 	if (window.navigator.userAgent.indexOf("X11")            != -1) OSName="UNIX";
 	if (window.navigator.userAgent.indexOf("Linux")          != -1) OSName="Linux";
 	document.cookie = "operating-system="+OSName;
+	let timezone = null;
+	timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+	if(timezone){
+	document.cookie = "timezone="+timezone;
+	}
 </script>
 </html>
