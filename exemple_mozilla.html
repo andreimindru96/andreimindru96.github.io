@@ -12,6 +12,10 @@ Example 3<br>
 <button onclick="doOnce()">Only do something once</button><br>
 Example 4<br>
 <button onclick="resetOnce()">Reset only once cookie</button><br>
+Example 5<br>
+See console log<br>
+Example 6<br>
+See console log<br>
 
 
 
@@ -45,6 +49,8 @@ function doOnce() {
 function resetOnce() {
   document.cookie = "doSomethingOnlyOnce=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
 }
+
+document.cookie = "reader=1";
 //ES5
 
 if (document.cookie.split(';').some(function(item) {
@@ -57,6 +63,20 @@ if (document.cookie.split(';').some(function(item) {
 
 if (document.cookie.split(';').some((item) => item.trim().startsWith('reader='))) {
     console.log('The cookie "reader" exists (ES6)')
+}
+
+//ES5
+
+if (document.cookie.split(';').some(function(item) {
+    return item.indexOf('reader=1') >= 0
+})) {
+    console.log('The cookie "reader" has "1" for value')
+}
+
+//ES2016
+
+if (document.cookie.split(';').some((item) => item.includes('reader=1'))) {
+    console.log('The cookie "reader" has "1" for value')
 }
 </script>
 </html>
