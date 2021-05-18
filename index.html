@@ -38,20 +38,7 @@ Cookies:<br>
 </body>
 
 <script> 
-	if(document.cookie){
-		const numeStudent = document.cookie
-		  .split('; ')
-		  .find(row => row.startsWith('numeStudent='))
-		  .split('=')[1];
-	 
-	if(numeStudent && numeStudent!=null && numeStudent!=undefined){
-		let element = document.getElementById('nameInput');
-		let btn1 = document.getElementById('addNameBtn');
-		btn1.style="display:none";
-		
-		element.value= numeStudent;
-	}
-	}
+	
 	function alertCookie() { alert(document.cookie); }
 	// Opera 8.0+
 	var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
@@ -112,6 +99,20 @@ Cookies:<br>
 	function setNameCookie(){
 		let element = document.getElementById('nameInput');
 		document.cookie = "numeStudent="+element.value;
+	}
+	if(document.cookie){
+		const numeStudent = document.cookie
+		  .split('; ')
+		  .find(row => row.startsWith('numeStudent='))
+		  .split('=')[1];
+	 
+		if(numeStudent && numeStudent!=null && numeStudent!=undefined){
+			let element = document.getElementById('nameInput');
+			let btn1 = document.getElementById('addNameBtn');
+			btn1.style="display:none";
+			
+			element.value= numeStudent;
+		}
 	}
 </script>
 </html>
