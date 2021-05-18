@@ -21,7 +21,8 @@ STUDENT: Mindru Andrei
 		<input id="nameInput" type="text" class="form-control " placeholder="Numele dvs. complet" aria-label="Recipient's username" aria-describedby="basic-addon2">
 	</div>
 	<div class="col-sm-3">
-		<button class="btn btn-success custom" type="button" onclick="setNameCookie()">Salveaza</button>
+		<button class="btn btn-success custom" type="button" id="addNameBtn" onclick="setNameCookie()">Salveaza</button>
+		<button style="display:none;" class="btn btn-primary custom" type="button" id="editNameBtn" onclick="setNameCookie()">Actualizeaza</button>
 	</div>
 </div>
 <br><br><br>
@@ -43,6 +44,10 @@ Cookies:<br>
 	  .split('=')[1];
 	if(numeStudent && numeStudent!=null && numeStudent!=undefined){
 		let element = document.getElementById('nameInput');
+		let btn1 = document.getElementById('addNameBtn');
+		btn1.style="display:none";
+		let btn2 = document.getElementById('editNameBtn');
+		btn2.style="display:inline-block;
 		element.value= numeStudent;
 	}
 	function alertCookie() { alert(document.cookie); }
