@@ -4,8 +4,11 @@
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <style>
-.btn {
+.btn:not(.custom) {
 	width:250px;;
+}
+.input-group-append, inputCstm {
+	display:inline-block;
 }
 </style>
 </head>
@@ -13,6 +16,14 @@
 <hr>
 STUDENT: Mindru Andrei
 <hr>
+<div class="row">
+	<div class="col-sm-3">  
+		<input type="text" class="form-control " placeholder="Numele dvs. complet" aria-label="Recipient's username" aria-describedby="basic-addon2">
+	</div>
+	<div class="col-sm-3">
+		<button class="btn btn-success custom" type="button" onclick="setNameCookie()">Salveaza</button>
+	</div>
+</div>
 <br><br><br>
 Cookies:<br>
 1.Detectare browser<br>
@@ -28,6 +39,14 @@ Cookies:<br>
 <script> 
 	document.cookie = "session=test GDPR";
 	document.cookie = "favorite_task=collect Data";
+	const numeStudent = document.cookie
+	  .split('; ')
+	  .find(row => row.startsWith('numeStudent='))
+	  .split('=')[1];
+	if(numeStudent && numeStudent!=null && numeStudent!=undefined){
+		let element = document.getElementById('nameInput');
+		element.value= numeStudent;
+	}
 	function alertCookie() { alert(document.cookie); }
 	// Opera 8.0+
 	var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
@@ -84,6 +103,10 @@ Cookies:<br>
 	timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 	if(timezone){
 	document.cookie = "timezone="+timezone;
+	}
+	function setNameCookie(){
+		let element = document.getElementById('nameInput');
+		document.cookie = "numeStudent="+element.value;
 	}
 </script>
 </html>
