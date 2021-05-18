@@ -27,10 +27,10 @@ STUDENT: Mindru Andrei
 </div>
 <br><br><br>
 Cookies:<br>
-1.Nume student<br>
-2.Detectare browser<br>
-3.Detectare sistem de operare<br>
-4.Detectare timezone<br>
+1.Nume student: <span id="nameCookie"></span><br>
+2.Detectare browser: <span id="browserCookie"></span><br>
+3.Detectare sistem de operare: <span id="soCookie"></span><br>
+4.Detectare timezone: <span id="timezoneCookie"></span><br>
 <hr>
 <button class="btn btn-primary" onclick="alertCookie()">Show cookies</button><br>
 <Br>
@@ -66,18 +66,23 @@ Cookies:<br>
 	
 	if(isChrome){
 		document.cookie = "browser=chrome";
+		document.getElementById('browserCookie').innerHTML="chrome";
 	}
 	if(isOpera){
 		document.cookie = "browser=opera";
+		document.getElementById('browserCookie').innerHTML="opera";
 	}
 	if(isFirefox){
 		document.cookie = "browser=firefox";
+		document.getElementById('browserCookie').innerHTML="firefox";
 	}
 	if(isEdge){
 		document.cookie = "browser=edge";
+		document.getElementById('browserCookie').innerHTML="edge";
 	}
 	if(isIE){
 		document.cookie = "browser=iexplorer";
+		document.getElementById('browserCookie').innerHTML="iexplorer";
 	}
 	var OSName = "Unknown";
 	if (window.navigator.userAgent.indexOf("Windows NT 10.0")!= -1) OSName="Windows 10";
@@ -91,11 +96,13 @@ Cookies:<br>
 	if (window.navigator.userAgent.indexOf("X11")            != -1) OSName="UNIX";
 	if (window.navigator.userAgent.indexOf("Linux")          != -1) OSName="Linux";
 	document.cookie = "operating-system="+OSName;
+	document.getElementById('soCookie').innerHTML=OSName;
 	let timezone = null;
 	timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 	if(timezone){
 	document.cookie = "timezone="+timezone;
 	}
+	document.getElementById('timezoneCookie').innerHTML=timezone;
 	function setNameCookie(){
 		let element = document.getElementById('nameInput');
 		document.cookie = "numeStudent="+element.value;
@@ -112,6 +119,7 @@ Cookies:<br>
 			btn1.style="display:none";
 			
 			element.value= numeStudent;
+			document.getElementById('nameCookie')=numeStudent;
 		}
 	}
 </script>
