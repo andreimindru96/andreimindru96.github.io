@@ -115,6 +115,9 @@ Cookies:<br>
 	function setNameCookie(){
 		let element = document.getElementById('nameInput');
 		document.cookie = "numeStudent="+element.value;
+		let btn1 = document.getElementById('addNameBtn');
+		btn1.style="display:none";
+		document.getElementById('nameCookie').innerHTML=numeStudent;
 	}
 	if(document.cookie){
 		const numeStudent = document.cookie
