@@ -10,9 +10,18 @@
 .input-group-append, inputCstm {
 	display:inline-block;
 }
+body {
+	background:url('background.png');
+	background-size:cover;
+}
+.container {
+	margin-top:100px;
+	background-color:white;
+}
 </style>
 </head>
 <body>
+<div class="container">
 <hr>
 STUDENT: Mindru Andrei
 <hr>
@@ -34,7 +43,7 @@ Cookies:<br>
 <hr>
 <button class="btn btn-primary" onclick="alertCookie()">Show cookies</button><br>
 <Br>
-
+</div>
 </body>
 
 <script> 
@@ -119,7 +128,7 @@ Cookies:<br>
 			btn1.style="display:none";
 			
 			element.value= numeStudent;
-			document.getElementById('nameCookie')=numeStudent;
+			document.getElementById('nameCookie').innerHTML=numeStudent;
 		}
 	}
 </script>
