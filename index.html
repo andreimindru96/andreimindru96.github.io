@@ -26,20 +26,17 @@ STUDENT: Mindru Andrei
 </div>
 <br><br><br>
 Cookies:<br>
-1.Nume student
+1.Nume student<br>
 2.Detectare browser<br>
 3.Detectare sistem de operare<br>
 4.Detectare timezone<br>
 <hr>
 <button class="btn btn-primary" onclick="alertCookie()">Show cookies</button><br>
 <Br>
-<button class="btn btn-warning"><a href="https://andreimindru96.github.io/exemple_mozilla.html">Exemple mozilla</a></button>
 
 </body>
 
 <script> 
-	document.cookie = "session=test GDPR";
-	document.cookie = "favorite_task=collect Data";
 	const numeStudent = document.cookie
 	  .split('; ')
 	  .find(row => row.startsWith('numeStudent='))
