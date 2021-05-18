@@ -73,7 +73,7 @@ Cookies:<br>
 	// Blink engine detection
 	var isBlink = (isChrome || isOpera) && !!window.CSS;	
 	
-	if(isChrome){
+	if(isChrome && !isEdgeChromium){
 		document.cookie = "browser=chrome";
 		document.getElementById('browserCookie').innerHTML="chrome";
 	}
@@ -85,7 +85,7 @@ Cookies:<br>
 		document.cookie = "browser=firefox";
 		document.getElementById('browserCookie').innerHTML="firefox";
 	}
-	if(isEdge){
+	if(isEdge || isEdgeChromium){
 		document.cookie = "browser=edge";
 		document.getElementById('browserCookie').innerHTML="edge";
 	}
