@@ -156,10 +156,12 @@ Dacă unele din datele despre dumneavoastră sunt incorecte, vă rugăm să ne i
 		document.getElementById('nameCookie').innerHTML=element.value;
 	}
 	if(document.cookie){
-		const numeStudent = document.cookie
+		const numeStudentKey = document.cookie
 		  .split('; ')
-		  .find(row => row.startsWith('numeStudent='))
-		  .split('=')[1];
+		  .find(row => row.startsWith('numeStudent='));
+		   if( numeStudentKey){
+			const numeStudent  = numeStudentKey.split('=')[1];
+		}
 	 
 		if(numeStudent && numeStudent!=null && numeStudent!=undefined){
 			let element = document.getElementById('nameInput');
