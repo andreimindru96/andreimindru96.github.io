@@ -83,7 +83,7 @@ Dacă unele din datele despre dumneavoastră sunt incorecte, vă rugăm să ne i
 </body>
 
 <script> 
-	
+	let expandedInfo=false;
 	function alertCookie() { alert(document.cookie); }
 	// Opera 8.0+
 	var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
@@ -156,6 +156,7 @@ Dacă unele din datele despre dumneavoastră sunt incorecte, vă rugăm să ne i
 		document.getElementById('nameCookie').innerHTML=element.value;
 	}
 	if(document.cookie){
+	let numeStudent =null;
 		const numeStudentKey = document.cookie
 		  .split('; ')
 		  .find(row => row.startsWith('numeStudent='));
@@ -172,7 +173,9 @@ Dacă unele din datele despre dumneavoastră sunt incorecte, vă rugăm să ne i
 			document.getElementById('nameCookie').innerHTML=numeStudent;
 		}
 	}
-	let expandedInfo=false;
+	
+	
+	
 	function displayInfo(){
 		if(!expandedInfo){
 			document.getElementById('textInfo').style="display:block";
