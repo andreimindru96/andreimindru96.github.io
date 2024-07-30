@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -9,12 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+BE+VLG:wght@100..400&display=swap" rel="stylesheet" />
     <style>
       body {
-        background-color: black;
+        background: rgb(138, 29, 29);
+        background: linear-gradient(90deg, rgba(138, 29, 29, 1) 0%, rgba(218, 69, 0, 1) 52%, rgba(138, 29, 29, 1) 100%);
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        min-height: 100vh;
         margin: 0;
-        font-family: "Playwrite BE VLG", cursive;
       }
 
       .cover {
@@ -22,6 +22,7 @@
         text-align: center;
         overflow: hidden;
         font-weight: bold;
+        font-family: "Playwrite BE VLG", cursive;
       }
 
       .cover::before {
@@ -41,6 +42,27 @@
         z-index: 1;
       }
 
+      .details .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(10px);
+        background: rgba(228, 228, 228, 0.5);
+        backdrop-filter: saturate(180%) blur(10px);
+      }
+
+      .details .card {
+        background: none;
+      }
+
+      .details .card-body {
+        position: relative;
+        z-index: 2;
+      }
+
       .content {
         position: relative;
         padding: 20px;
@@ -48,6 +70,15 @@
         min-height: 400px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         z-index: 2;
+      }
+
+      .btn-primary {
+        background-color: rgba(218, 69, 0, 1);
+        border-color: rgba(218, 69, 0, 1);
+      }
+
+      .btn-primary:hover {
+        background-color: rgb(138, 29, 29);
       }
 
       .title {
@@ -65,6 +96,33 @@
         font-size: 1.5rem;
         color: white;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .location::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0d0c0c;
+        opacity: 0.5;
+        backdrop-filter: blur(10px);
+        background: rgb(53, 52, 52);
+        backdrop-filter: saturate(180%) blur(10px);
+      }
+
+      .location {
+        margin-top: 20px;
+        display: block;
+        min-height: 400px;
+        background: none;
+        position: relative;
+        z-index: 2;
+      }
+      .carousel-item img {
+        height: 400px;
+        object-fit: contain;
       }
     </style>
   </head>
@@ -89,18 +147,96 @@
       </div>
     </div>
 
+    <div class="details container" style="min-height: 500px; display: flex; align-items: center; justify-content: center">
+      <div class="card" style="width: 100%; max-width: 800px;">
+        <div class="card-body">
+          <h5 class="card-title">Detalii eveniment</h5>
+          <p class="card-text">
+            <strong>Data:</strong> 6 Iunie 2025
+          </p>
+          <p class="card-text">
+            <strong>Ora:</strong> 16:00
+          </p>
+          <p class="card-text">
+            <strong>Locatie:</strong> 
+          </p>
+          <p class="card-text">
+            <strong>Adresa:</strong> 
+          </p>
+          <p class="card-text">
+            <strong>Telefon:</strong> +40 722 222 222
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="location">
+      <div class="location-title">
+        <h2 class="text-center text-white">Locatie</h2>
+      </div>
+      <div id="carouselExampleIndicators" class="carousel slide carousel-dark" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/images/cover.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/cover.jpg"  class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/cover.jpg"  class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal modal-lg fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Raspundeti la invitatie</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">...</div>
+          <div class="modal-body">
+            <div class="explanation">
+              <div class="row">
+                <div class="col-sm-12">
+                  <p>Ne-ar face o deosebita placere sa participati la evenimentul nostru.</p>
+                </div>
+                <div class="col-sm-12">
+                  <p>Pentru a raspunde la invitatia noastra ne puteti suna sau scrie un mesaj la:</p>
+                </div>
+                <div class="col-sm-6 my-2">
+                  <p>Andrei: +40 722 222 222</p>
+                </div>
+                <div class="col-sm-6 my-2">
+                  <p>Alina: +40 722 222 222</p>
+                </div>
+                <div class="col-sm-12">
+                  <p>Sau puteti completa direct formularul din linkul de mai jos:</p>
+                </div>
+                <div class="col-sm-12 d-flex w-100 justify-content-center">
+                  <a href="https://www.google.com" class="btn btn-primary my-3">Completeaza formularul</a>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Inchide</button>
           </div>
         </div>
       </div>
