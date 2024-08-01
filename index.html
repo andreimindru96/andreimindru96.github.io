@@ -91,7 +91,7 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         background-color: rgba(255, 255, 255, 0.436);
         background-image: url("/assets/images/cover3.png"); /* Replace with your background image */
-        backdrop-filter: saturate(80%) blur(5px);
+        backdrop-filter: saturate(70%) blur(5px);
         background-size: 500px;
         background-repeat: no-repeat;
         background-position: bottom center;
@@ -105,6 +105,7 @@
 
       .cover .btn-primary {
         font-size: 1.5rem;
+        font-weight: bold;
       }
 
       .btn-primary:hover {
@@ -116,19 +117,22 @@
         font-size: 3rem;
         font-weight: bold;
         color: white;
-        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.702);
+        text-shadow:0 0 20px #340404, 0 0 20px #000000;
+
       }
       .cover .subtitle {
         font-size: 3rem;
-        padding-top: 150px;
+        padding-top: 230px;
         color: white;
-        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        /* text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); */
+        text-shadow:0 0 20px #340404, 0 0 20px #000000;
       }
       #countdown {
-        margin-top: 100px;
+        margin-top: 20px;
         font-size: 2rem;
         color: white;
-        text-shadow: 2px 2px 16px rgba(0, 0, 0, 0.908);
+        text-shadow:0 0 20px #340404, 0 0 20px #000000;
+
       }
 
       .location .carousel::before {
@@ -198,6 +202,12 @@
         height: 200px;
         object-fit: cover;
       }
+
+      .line-separator {
+        border: 0;
+        height: 2px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+      }
     </style>
   </head>
   <body>
@@ -249,6 +259,7 @@
       <div class="location-title">
         <h2 class="ms-4 mb-3">Locatie Eveniment</h2>
       </div>
+      <hr class="line-separator">
       <div id="carouselExampleIndicators" class="carousel slide carousel-light" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button
@@ -295,6 +306,7 @@
     <div class="cazari-title">
       <h2 class="mt-5 ms-4">Recomandari cazare</h2>
     </div>
+    <hr class="line-separator">
     <div class="cazari card-group">
       <a href="https://www.booking.com/hotel/ro/bielmann.ro.html" target="_blank" class="card">
         <img src="assets/images/cazari/bielmann.jpg" class="card-img-top" alt="..." />
