@@ -86,13 +86,13 @@
 
       .content {
         position: relative;
-        padding: 20px;
-        min-height: 500px;
+        padding: 0px;
+        min-height: 570px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         background-color: rgba(255, 255, 255, 0.436);
         background-image: url("/assets/images/cover3.png"); /* Replace with your background image */
-        backdrop-filter: saturate(70%) blur(5px);
-        background-size: 500px;
+        backdrop-filter: saturate(30%) blur(5px) brightness(0.8);
+        background-size: 700px;
         background-repeat: no-repeat;
         background-position: bottom center;
         z-index: 2;
@@ -117,22 +117,21 @@
         font-size: 3rem;
         font-weight: bold;
         color: white;
-        text-shadow:0 0 20px #340404, 0 0 20px #000000;
-
+        text-shadow: 0 0 20px #340404, 0 0 20px #000000;
       }
       .cover .subtitle {
-        font-size: 3rem;
-        padding-top: 230px;
+        font-size: 2rem;
+        padding-top: 0px;
+        margin-bottom: 280px;
         color: white;
         /* text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); */
-        text-shadow:0 0 20px #340404, 0 0 20px #000000;
+        text-shadow: 0 0 20px #340404, 0 0 20px #000000;
       }
       #countdown {
         margin-top: 20px;
         font-size: 2rem;
         color: white;
-        text-shadow:0 0 20px #340404, 0 0 20px #000000;
-
+        text-shadow: 0 0 20px #340404, 0 0 20px #000000;
       }
 
       .location .carousel::before {
@@ -213,8 +212,8 @@
   <body>
     <div class="cover">
       <div class="content darken">
-        <div class="title">Nunta</div>
-        <div class="subtitle">Alina & Andrei</div>
+        <div class="title">Alina & Andrei</div>
+        <div class="subtitle">Vă invităm la nuntă</div>
         <div class="countdown">
           <div id="countdown">
             <div class="spinner-border text-light" role="status">
@@ -224,14 +223,17 @@
         </div>
 
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Raspunde la invitatie</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Răspunde la invitație</button>
       </div>
     </div>
 
     <div class="details container" style="min-height: 400px; display: flex; align-items: center; justify-content: center">
       <div class="card" style="width: 100%; max-width: 800px">
         <div class="card-body">
-          <h5 class="card-title">Detalii eveniment</h5>
+          <h5 class="card-title">
+            Detalii eveniment
+            <hr class="line-separator" />
+          </h5>
           <p class="card-text"><strong>Data:</strong> 6 Iunie 2025</p>
           <p class="card-text"><strong>Ora:</strong> 16:00</p>
           <p class="card-text">
@@ -259,7 +261,7 @@
       <div class="location-title">
         <h2 class="ms-4 mb-3">Locatie Eveniment</h2>
       </div>
-      <hr class="line-separator">
+      <hr class="line-separator" />
       <div id="carouselExampleIndicators" class="carousel slide carousel-light" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button
@@ -306,7 +308,7 @@
     <div class="cazari-title">
       <h2 class="mt-5 ms-4">Recomandari cazare</h2>
     </div>
-    <hr class="line-separator">
+    <hr class="line-separator" />
     <div class="cazari card-group">
       <a href="https://www.booking.com/hotel/ro/bielmann.ro.html" target="_blank" class="card">
         <img src="assets/images/cazari/bielmann.jpg" class="card-img-top" alt="..." />
@@ -345,10 +347,10 @@
             <div class="explanation">
               <div class="row">
                 <div class="col-sm-12">
-                  <p>Ne-ar face o deosebita placere sa participati la evenimentul nostru.</p>
+                  <p>Ne-ar face o deosebită plăcere să participați la nunta noastră.</p>
                 </div>
                 <div class="col-sm-12">
-                  <p>Pentru a raspunde la invitatia noastra ne puteti suna sau scrie un mesaj la:</p>
+                  <p>Pentru a răspunde la invitație ne puteți suna sau scrie un mesaj la:</p>
                 </div>
                 <div class="col-sm-6 my-2">
                   <p>Andrei: <a href="Tel:+40 721 580 425">+40 721 580 425</a></p>
@@ -357,14 +359,14 @@
                   <p>Alina: <a href="Tel:+40 722 490 720">+40 722 490 720</a></p>
                 </div>
                 <div class="col-sm-12">
-                  <p>Sau puteti completa direct formularul din linkul de mai jos:</p>
+                  <p>Sau puteți completa direct formularul din linkul de mai jos:</p>
                 </div>
                 <div class="col-sm-12 d-flex w-100 justify-content-center">
                   <a
                     href="https://docs.google.com/forms/d/1XKJHqhsrapdiy2DY3ImBpLT9B4njvVvjXzAHcHG4Efk"
                     target="_blank"
                     class="btn btn-primary my-3"
-                    >Completeaza formularul</a
+                    >Completează formularul</a
                   >
                 </div>
               </div>
