@@ -43,11 +43,13 @@
         font-weight: 700;
         font-style: normal;
         background-color: black;
-        background-image: url("/assets/images/falling-stars-stars.gif"); /* Replace with your background image */
+        background-image: url("/assets/images/cover-album.jpg"); /* Replace with your background image */
         background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
       }
 
-      .titlu {
+      .intrebare {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -55,23 +57,38 @@
         color: white;
         text-shadow: 0 0 20px #340404, 0 0 20px #000000;
         margin-top: 20px;
+        margin-bottom: 50px;
         text-align: center;
       }
 
-      .subtitlu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      .footer {
+        display: block;
+        width: 300px;
         font-size: 2rem;
-        color: white;
-        text-shadow: 0 0 20px #340404, 0 0 20px #000000;
-        margin-top: 20px;
+        padding: 5px 2px 5px 2px;
+        border-radius: 20px;
         text-align: center;
+        color: white;
+        background-color: #0069d1;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .footer:hover {
+        background-color: #0056b3;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       }
     </style>
   </head>
   <body>
-    <div class="titlu">Suntem la fel de nerabdatori ca si voi</div>
-    <div class="subtitlu">Pozele sunt in prelucrare!<br> Cel mai probabil vor fi gata pana la sfarsitul lunii Iulie</div>
+    <div class="intrebare">Nunta<br />Alina si Andrei</div>
+    <a style="text-decoration: none;" href="https://mindru.org/nextcloud/s/42YgeZbwxfEGt4H">
+      <div class="footer">Deschide albumul</div>
+    </a>
   </body>
+  <script>
+    // document.addEventListener("DOMContentLoaded", function () {
+    //   window.location.href = "https://mindru.org/nextcloud/s/42YgeZbwxfEGt4H";
+    // });
+  </script>
 </html>
